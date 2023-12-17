@@ -1,14 +1,33 @@
-const btn = document.querySelector('#btn');
+const heading = document.querySelector('#heading');
 
-console.log(btn);
-console.log(btn.textContent);
+const keyframes = {
+  borderRadius:[
+    '20% 50& 50% 70%/50% 50% 70% 50%',
+    '50% 20% 50% 50%/40% 40% 60% 60%',
+    '50% 40% 20% 40%/40% 50% 50% 80%',
+    '50% 50% 50% 20%/40% 40% 60% 60%',
+  ],
+};
 
-btn.addEventListener('click',()=>{
-    document.body.classList.toggle('dark-theme');
+const options =  {
+  duration: 8000,
+  direction: 'alternate',
+  iterations: Infinity
+};
 
-    if(btn.textContent ==='ダークモードにする'){
-        btn.textContent ='ライトモードにする';
-    }else{
-        btn.textContent ='ダークモードにする';
-    }
-});
+heading.animate(keyframes,options);
+
+const item = document.querySelector('#item');
+
+const keyframes2 = {
+  color: ['transparent','#fff'],
+  backgroundPosition: ['0','100%'],
+  transform: ['translateY(-100%)', 'translateY(0)'], // 追加: 上から下に浮かび上がるアニメーション
+};
+
+const options2 = {
+  duration: 5000,
+  easing: 'ease',
+};
+
+item.animate(keyframes2,options2);
